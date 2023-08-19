@@ -10,6 +10,7 @@ import { VoiceStatus } from "@/lib/entities/user";
 import { t } from "@/lib/i18n";
 import { clsx } from "@/lib/utils";
 import { generateFakeCurrentUser } from "@/lib/utils/mock";
+import Link from "next/link";
 import { useState } from "react";
 import { BsGearFill, BsHeadphones, BsMicFill } from "react-icons/bs";
 
@@ -96,10 +97,12 @@ export default function VoiceStatusFooter() {
             }
             icon={<BsHeadphones fontSize={20} />}
           />
-          <VoiceStatusButton
-            tooltipText="Settings"
-            icon={<BsGearFill fontSize={18} />}
-          />
+          <Link href="/settings">
+            <VoiceStatusButton
+              tooltipText="Settings"
+              icon={<BsGearFill fontSize={18} />}
+            />
+          </Link>
         </div>
       </div>
     </TooltipProvider>

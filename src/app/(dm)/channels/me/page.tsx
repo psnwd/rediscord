@@ -1,11 +1,11 @@
-import FriendsTabGroup from "@/components/islets/friends-tab-group";
+import { delay } from "@/lib/utils";
+import { User } from "@/lib/entities/user";
 import Divider from "@/components/ui/divider";
 import { BsPersonFill } from "react-icons/bs";
-import { Page, PageContent, PageHeader } from "@/components/layout/page";
 import FriendList from "@/components/islets/friend-list";
-import { delay } from "@/lib/utils";
+import FriendsTabGroup from "@/components/islets/friends-tab-group";
 import { MOCK_DELAY, generateRandomFakeUsers } from "@/lib/utils/mock";
-import { User } from "@/lib/entities/user";
+import { Page, PageContent, PageHeader } from "@/components/layout/page";
 
 const getData = async (): Promise<{ friends: User[] }> => {
   /*

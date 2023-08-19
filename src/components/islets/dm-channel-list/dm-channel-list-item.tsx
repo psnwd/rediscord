@@ -11,7 +11,7 @@ export default function DMChannelListItem({ channel }: DMChannelListItemProps) {
   return (
     <ListItem
       noVerticalPadding
-      href={`/channels/${channel.id}`}
+      href={`/channels/me/${channel.id}`}
       className="group gap-3 py-1.5"
     >
       <Avatar

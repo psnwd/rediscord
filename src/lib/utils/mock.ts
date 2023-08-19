@@ -3,6 +3,7 @@ import { User, UserStatuses } from "@/lib/entities/user";
 import { ActivityTypes } from "@/lib/entities/activity";
 import { ListedServer } from "../entities/server";
 import { ListedDMChannel } from "../entities/channel";
+import { Message } from "../entities/message";
 
 export const MOCK_DELAY = 2000;
 
@@ -55,4 +56,14 @@ export const generateRandomFakeUsers = (length: number): User[] =>
     avatar: faker.image.avatarGitHub(),
     status: faker.helpers.arrayElement(Object.values(UserStatuses)),
     type: "user",
+  }));
+
+export const generateRandomMessage = (length: number): Message[] =>
+  Array.from({ length }, () => ({
+    id: generateRandomDiscordID(),
+    name: faker.person.fullName(),
+    message: faker.lorem.paragraph(),
+    timestamp: faker.date.recent().toISOString(),
+    status: faker.helpers.arrayElement(Object.values(UserStatuses)),
+    avatar: faker.image.avatarGitHub(),
   }));

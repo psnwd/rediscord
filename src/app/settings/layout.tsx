@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import DMLayoutSkeleton from "@/components/islets/dm-layout/dm-layout-skeleton";
-import DMLayout from "@/components/islets/dm-layout";
-import CommonLayout from "@/components/layout/common-layout";
+import SettingsLayout from "@/components/islets/settings-layout";
 
 export const revalidate = 0;
 
@@ -12,8 +11,7 @@ export default function SuspendedDMLayout({
 }) {
   return (
     <Suspense fallback={<DMLayoutSkeleton>{children}</DMLayoutSkeleton>}>
-      <CommonLayout />
-      <DMLayout>{children}</DMLayout>
+      <SettingsLayout>{children}</SettingsLayout>
     </Suspense>
   );
 }
